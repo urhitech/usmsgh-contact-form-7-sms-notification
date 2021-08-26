@@ -92,8 +92,7 @@ class Contact_Form_Sms_Integration_abn_Functions {
         }
     }
 
-
-    public function send_sms($phone, $message){
+    public function send_sms($phone, $message) {
         $url = 'https://webapp.usmsgh.com/api/sms/send';
         $pattern = '/^0/';
         $api_token = get_option(Contact_FormSI_DB_SLUG.'api_token','');
@@ -109,8 +108,7 @@ class Contact_Form_Sms_Integration_abn_Functions {
         }
 
         if (!empty($api_token) && !empty($sender_id)) {
-            $array = explode(',', $phone);
-            $phone = $array;
+            $phone = explode(',', $phone);;
             if (count($phone) > 1) {
                 $phone_numbers = [];
                 foreach ($phone as $item) {

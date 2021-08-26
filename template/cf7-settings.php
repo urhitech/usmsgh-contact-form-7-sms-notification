@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <label><?php echo __('Country', Contact_FormSI_TXT); ?></label>
+                <label><?php echo __('Choose Country', Contact_FormSI_TXT); ?></label>
                 <select class="form-control select2" name="country" id="countries">
                     <option value="" <?php if (!empty($country_data)) echo $country_data?>><?= __('Select Option', Contact_FormSI_TXT); ?></option>
                 </select>
@@ -37,7 +37,8 @@
             </div>
         </div>
         <input type="hidden" name="country_code" id="country_code" value="<?php if (!empty($country_code_data)) echo $country_code_data?>">
-        <p class="text-danger text-center mt-2">Please if you're not in Ghana, Select your country and Provide the phone number approved from USMS-GH</p>
+        <p class="text-danger text-center mt-2">Please if you're not in Ghana, Select your country and Provide the phone number approved from USMS-GH.
+            <br> Make sure you provide either Sender ID or Phone Number only and not both.</p>
     </div>
     <div class="mt-2">
         <input type="submit" name="save_api_settings" value="Save Changes" class="btn btn-primary" />

@@ -92,6 +92,11 @@ class Contact_Form_Sms_Integration_abn_Functions {
         }
     }
 
+    /** Sending messages
+     * @param $phone
+     * @param $message
+     * @return false
+     */
     public function send_sms($phone, $message) {
         $url = 'https://webapp.usmsgh.com/api/sms/send';
         $pattern = '/^0/';
@@ -129,7 +134,7 @@ class Contact_Form_Sms_Integration_abn_Functions {
     }
 
 
-    /**
+    /** Single Messages configuration
      * @param $url
      * @param $api_token
      * @param $recipient
@@ -164,6 +169,13 @@ class Contact_Form_Sms_Integration_abn_Functions {
     }
 
 
+    /** Bulk/Group Messages configuration
+     * @param $url
+     * @param $api_token
+     * @param $sender_id
+     * @param $recipients
+     * @param $message
+     */
     public static function sms_group_config($url, $api_token, $sender_id, $recipients, $message)
     {
         foreach ($recipients as $key => $recipient) {

@@ -169,7 +169,7 @@ class Contact_Form_Sms_Integration_abn_Functions {
     }
 
 
-    /** Bulk/Group Messages configuration
+    /** Bulk / Group Messages configuration
      * @param $url
      * @param $api_token
      * @param $sender_id
@@ -209,6 +209,9 @@ class Contact_Form_Sms_Integration_abn_Functions {
     }
 }
 
+/** Helper function for checking bugs or getting useful info.
+ * @param $data
+ */
 function dd($data) {
     echo '<pre>';
     var_dump($data);

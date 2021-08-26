@@ -98,11 +98,11 @@ class Contact_Form_Sms_Integration_abn_Admin extends Contact_Form_Sms_Integratio
 	public function plugin_row_links( $plugin_meta, $plugin_file ) {
 		if ( Contact_FormSI()->get_vars('FILE') == $plugin_file ) {
             $plugin_meta[] = sprintf('<a href="%s">%s</a>', '#', __('Settings', Contact_FormSI_TXT) );
-            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://profiles.wordpress.org/witsolution/#content-plugins/faq', __('F.A.Q', Contact_FormSI_TXT) );
-            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/technofreaky/cf7-international-sms-intergation', __('View On Github', Contact_FormSI_TXT) );
-            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/technofreaky/cf7-international-sms-intergation/issues', __('Report Issue', Contact_FormSI_TXT) );
-            $plugin_meta[] = sprintf('&hearts; <a href="%s">%s</a>', 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KX225JU6JH8E2', __('Donate', Contact_FormSI_TXT) );
-            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'http://varunsridharan.in/plugin-support/', __('Contact Author', Contact_FormSI_TXT) );
+            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://usmsgh.com/faqs/', __('F.A.Q', Contact_FormSI_TXT) );
+            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/urhitech/usmsgh-contact-form-7-sms-integration', __('View On Github', Contact_FormSI_TXT) );
+            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/urhitech/usmsgh-contact-form-7-sms-integration/issues', __('Report Issue', Contact_FormSI_TXT) );
+//            $plugin_meta[] = sprintf('&hearts; <a href="%s">%s</a>', 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KX225JU6JH8E2', __('Donate', Contact_FormSI_TXT) );
+            $plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://usmsgh.com/contact-support/', __('Contact Author', Contact_FormSI_TXT) );
 		}
 		return $plugin_meta;
 	}	    

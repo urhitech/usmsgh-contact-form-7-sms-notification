@@ -16,12 +16,12 @@
                             <li>Navigate to Sms Integration</li>
                             <li>Click on Settings tab</li>
                             <li>Provide USMS-GH API Token from your <a href="https://webapp.usmsgh.com/developers" target="_blank">USMS-GH API Integration</a></li>
-                            <li>Provide Approved Sender ID / Phone Number from your <a href="https://webapp.usmsgh.com/senderid" target="_blank">USMS-GH Sending / Sender ID</a></li>
+                            <li>Provide Approved Sender ID / Phone Number from your <a href="https://webapp.usmsgh.com/senderid" target="_blank">USMS-GH Sending</a> / Sender ID</li>
                         </ul>
                         <h3 class="hndle"><span>SIGN UP FOR FREE SMS ACCOUNT <a href="https://webapp.usmsgh.com" target="_blank" style="font-size:22px;" >CLICK HERE</a></span></h3>
                         <div class="option">
                             <div id="mc_embed_signup">
-                                <a href="https://www.usmsgh.com/" TARGET="_blank"><img src="https://webapp.usmsgh.com/images/pages/register.jpg" /></a>
+                                <a href="https://www.usmsgh.com/" TARGET="_blank"><img src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . 'banner-cf70.jpg'; ?>" /></a>
                             </div>
                         </div>
                     </div>

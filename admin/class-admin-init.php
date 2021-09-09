@@ -6,7 +6,6 @@ if (!defined('WPINC')) {
 
 class USMSGH_Contact_Form_Sms_Notification_abn_Admin extends USMSGH_Contact_Form_Sms_Notification_abn
 {
-
 	public function __construct()
 	{
 		add_action('admin_menu', array($this, 'add_menu'));
@@ -48,6 +47,10 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Admin extends USMSGH_Contact_Form
 			$country = trim(sanitize_text_field($_POST['country']));
 			$country_code = trim(sanitize_text_field($_POST['country_code']));
 			$reg_phone = trim(sanitize_text_field($_POST['reg_phone']));
+
+            if (!empty($api_token) || !empty($sender_id)) {
+                _e('API Token and Sender ID are required!');
+            }
 
 			update_option(Contact_FormSI_DB_SLUG . 'api_token', $api_token);
 			update_option(Contact_FormSI_DB_SLUG . 'sender_id', $sender_id);

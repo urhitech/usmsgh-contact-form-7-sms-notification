@@ -138,7 +138,7 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
                 foreach ($phone as $item) {
                     $phone_numbers[] = $item;
                 }
-                $this->sms_group_config($url, $api_token, $sender_id, $phone_number, $message);
+                $this->sms_group_config($url, $api_token, $sender_id, $phone_numbers, $message);
             } else
                 $this->send_sms_conf($url, $api_token, $sender_id, $phone_number, $message);
         }

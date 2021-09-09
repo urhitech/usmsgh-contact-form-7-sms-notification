@@ -1,21 +1,22 @@
-=== USMS-GH Contact Form 7 SMS Integration ===
+=== USMS-GH Contact Form 7 SMS Notification ===
 Contributors: urhitech
-Tags: Contact form 7 To SMS, Free SMS USMS-GH Account, Sms Form, contact form, Contact Form 7, Contact Form 7 To Mobile SMS, SMS API, FORM SMS API, Ghana SMS API, SMS gateway, USMS-GH, USMS-GH GHANA
+Tags: Contact form 7 To SMS, Free SMS USMS-GH Account, Sms Form, contact form, Contact Form 7, Contact Form 7 To Mobile SMS, SMS API, FORM SMS API, Ghana BULK SMS API, SMS gateway, USMS-GH, USMS-GH GHANA
 Requires at least: 3.4
-Tested up to: 5.3.2
+Tested up to: 5.8
 License: GPLv3
+Stable tag: 1.0.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Works with the Contact Form 7 plugin to send SMS notifications when somebody submits your contact form, using the API Configured By Site Admin
 
 == Description ==
-**[Contact Form 7 Sms Integration Guide](https://www.usmsgh.com/contact-form-7-sms-integration.html)**
-**[Contact Form 7 Sms Integration](https://www.usmsgh.com/)**
+**[USMS-GH Contact Form 7 Sms Integration Guide](https://www.usmsgh.com/contact-form-7-sms-integration.html)**
+**[USMS-GH Contact Form 7 Sms Integration](https://www.usmsgh.com/)**
 
 Works with the Contact Form 7 plugin to send SMS notifications when somebody submits your contact form, using the API Configured By Site Admin
 
 * Support SMS gateways:
- * [All Bulk SMS](https://www.usmsgh.com/)
+ * [USMS-GH](https://www.usmsgh.com/)
  
 = Our Services =
  * [Bulk SMS Service Provider in Ghana](https://www.usmsgh.com)
@@ -28,9 +29,9 @@ Works with the Contact Form 7 plugin to send SMS notifications when somebody sub
 Works with the Contact Form 7 plugin to send SMS notifications when somebody submits your contact form, using the API Configured By Site Admin 
 
 1. You can:
- * Upload the `usmsgh-contact-form-sms-integration` folder to `/wp-content/plugins/` directory via FTP.
+ * Upload the `usmsgh-contact-form-7-sms-integration` folder to `/wp-content/plugins/` directory via FTP.
  * Upload the full ZIP file via *Plugins -> Add New -> Upload* on your WordPress Administration Panel.
- * Search **USMS-GH Contact Form 7 SMS Integration** in the search engine available on *Plugins -> Add New* and press *Install Now* button.
+ * Search **USMS-GH Contact Form 7 SMS Notification** in the search engine available on *Plugins -> Add New* and press *Install Now* button.
 2. Activate plugin through *Plugins* menu on WordPress Administration Panel.
 3. Set up plugin on *Contact -> Sms Integration* or through *Settings* button.
 4. Create Custom SMS Template *Contact -Contact Forms -> USMS-GH* and create your custom SMS Template.

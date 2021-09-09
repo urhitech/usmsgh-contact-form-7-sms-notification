@@ -177,9 +177,8 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
 
         $resp = curl_exec($ch);
         if ($e = curl_error($ch)) {
-            echo $e;
-        } else {
-        }
+            _e($e);
+        } else {}
     }
 
 
@@ -213,7 +212,7 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
             $resp = curl_exec($ch);
 
             if ($e = curl_error($ch)) {
-                echo $e;
+                _e($e);
             } else {
                 print_r(json_decode($resp, true));
                 curl_close($ch);

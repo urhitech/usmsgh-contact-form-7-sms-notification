@@ -43,11 +43,11 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Admin extends USMSGH_Contact_Form
 	public function save_settings()
 	{
 		if (isset($_POST['save_api_settings'])) {
-			$api_token = sanitize_text_field($_POST['api_token']);
-			$sender_id = sanitize_text_field($_POST['sender_id']);
-			$country = sanitize_text_field($_POST['country']);
-			$country_code = sanitize_text_field($_POST['country_code']);
-			$reg_phone = sanitize_text_field($_POST['reg_phone']);
+			$api_token = trim(sanitize_text_field($_POST['api_token']));
+			$sender_id = trim(sanitize_text_field($_POST['sender_id']));
+			$country = trim(sanitize_text_field($_POST['country']));
+			$country_code = trim(sanitize_text_field($_POST['country_code']));
+			$reg_phone = trim(sanitize_text_field($_POST['reg_phone']));
 
 			update_option(Contact_FormSI_DB_SLUG . 'api_token', $api_token);
 			update_option(Contact_FormSI_DB_SLUG . 'sender_id', $sender_id);

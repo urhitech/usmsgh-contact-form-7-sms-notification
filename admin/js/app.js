@@ -1,6 +1,5 @@
 (function ($) {
     $(document).ready(function () {
-        $('.select2').select2();
         // Get all countries
         $.ajax({
             url: 'https://restcountries.eu/rest/v2/all',

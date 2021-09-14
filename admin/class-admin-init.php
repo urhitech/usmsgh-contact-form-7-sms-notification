@@ -13,6 +13,8 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Admin extends USMSGH_Contact_Form
 		add_action('admin_enqueue_scripts', array($this, 'load_js'));
 		add_action('admin_enqueue_scripts', array($this, 'enqueue_select2_scripts'));
 		add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
+		add_action('admin_enqueue_scripts', array($this, 'git_buttons'));
+//		add_action('admin_enqueue_scripts', array($this, 'mc_validate'));
 		add_filter('plugin_row_meta', array($this, 'plugin_row_links'), 10, 2);
 		add_action('admin_init', array($this, 'admin_init'));
 	}
@@ -93,9 +95,19 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Admin extends USMSGH_Contact_Form
 
 	public function load_js()
 	{
-		wp_register_script(Contact_FormSI_SLUG . '_app', plugins_url('js/app.js', __FILE__), [], '1.0.0', true);
+		wp_register_script(Contact_FormSI_SLUG . '_app', plugins_url('js/app.js', __FILE__));
 		wp_enqueue_script(Contact_FormSI_SLUG . '_app');
 	}
+
+    public function mc_validate()
+    {
+        wp_enqueue_script(Contact_FormSI_SLUG.'_cm_validate', plugins_url('js/mc_validate.js', __FILE__), [], '', true);
+    }
+
+    public function git_buttons()
+    {
+        wp_enqueue_script(Contact_FormSI_SLUG.'_git_buttons', plugins_url('js/github_buttons.js', __FILE__), [], '', true);
+    }
 
 	/**
 	 * Gets Current Screen ID from wordpress

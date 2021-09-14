@@ -1,7 +1,9 @@
 <div class="wrap welcome-wrap">
-    <h3>Welcome To <?php echo $this->plugin_name;?></h3>
+    <h3>Welcome To <?php echo $this->plugin_name; ?></h3>
     <div class="about-text plugin_welcome_text">
-        Thanks for installing! <?php echo $this->plugin_name;?> is more powerful, stable and secure than ever before. We hope you enjoy using it. </div>
+        Thanks for installing! <?php echo $this->plugin_name; ?> is more powerful, stable and secure than ever before.
+        We hope you enjoy using it.
+    </div>
 
     <div class="content_container">
 
@@ -9,45 +11,32 @@
             <div id="poststuff">
                 <div id="postbox-container-1" class="postbox-container">
                     <div class="postbox">
-                        <div class="" title="Click to toggle"> <br /> </div>
+                        <div class="" title="Click to toggle"><br/></div>
                         <h3 class="hndle"><span>FOR SMS Integration Guide</span></h3>
                         <ul style="margin-left: 10px">
                             <li>Click on Contact menu</li>
                             <li>Navigate to Sms Integration</li>
                             <li>Click on Settings tab</li>
-                            <li>Provide USMS-GH API Token from your <a href="https://webapp.usmsgh.com/developers" target="_blank">USMS-GH API Integration</a></li>
-                            <li>Provide Approved Sender ID / Phone Number from your <a href="https://webapp.usmsgh.com/senderid" target="_blank">USMS-GH Sending</a> / Sender ID</li>
+                            <li>Provide USMS-GH API Token from your <a href="https://webapp.usmsgh.com/developers"
+                                                                       target="_blank">USMS-GH API Integration</a></li>
+                            <li>Provide Approved Sender ID / Phone Number from your <a
+                                        href="https://webapp.usmsgh.com/senderid" target="_blank">Sender ID</a> /
+                                USMS-GH Sending
+                            </li>
                         </ul>
-                        <h3 class="hndle"><span>SIGN UP FOR FREE SMS ACCOUNT <a href="https://webapp.usmsgh.com" target="_blank" style="font-size:22px;" >CLICK HERE</a></span></h3>
+                        <h3 class="hndle"><span>SIGN UP FOR FREE SMS ACCOUNT <a href="https://webapp.usmsgh.com"
+                                                                                target="_blank" style="font-size:22px;">CLICK HERE</a></span>
+                        </h3>
                         <div class="option">
                             <div id="mc_embed_signup">
-                                <a href="https://www.usmsgh.com/" TARGET="_blank"><img src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . 'banner-cf70.jpg'; ?>" /></a>
+                                <a href="https://www.usmsgh.com/" TARGET="_blank"><img
+                                            src="<?php echo plugin_dir_url(dirname(__FILE__)) . 'banner-cf70.jpg'; ?>"/></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </div>
@@ -65,6 +54,7 @@
         position: relative;
         width: 98%;
     }
+
     .welcome-wrap h1 {
         color: #32373c;
         font-size: 2.8em;
@@ -106,12 +96,13 @@
         margin: 0;
     }
 
-    .singnUpFORM{
+    .singnUpFORM {
         display: inline-block;
         margin-left: 2%;
         margin-top: 10px;
         width: 46%;
     }
+
     #postbox-container-1 {
         float: left;
         margin-right: 0 !important;
@@ -146,9 +137,14 @@
 
 </style>
 <style type="text/css">
-    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    #mc_embed_signup {
+        background: #fff;
+        clear: left;
+        font: 14px Helvetica, Arial, sans-serif;
+    }
+
     #mc_embed_signup form {
-        padding-top: 0!important;
+        padding-top: 0 !important;
         padding-left: 0;
     }
 
@@ -182,7 +178,7 @@
 
 <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 <script>
-    ! function (d, s, id) {
+    !function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0],
             p = /^http:/.test(d.location) ? 'http' : 'https';
         if (!d.getElementById(id)) {
@@ -195,16 +191,33 @@
 </script>
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>(function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
+        js = d.createElement(s);
+        js.id = id;
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=477093012452061";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- Place this tag right after the last button or just before your close body tag. -->
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
 
-<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='WEBSITE';ftypes[3]='url';fnames[4]='COUNTRY';ftypes[4]='text';fnames[5]='PLUGINNAME';ftypes[5]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script type='text/javascript'>
+    (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[2] = 'LNAME';
+        ftypes[2] = 'text';
+        fnames[3] = 'WEBSITE';
+        ftypes[3] = 'url';
+        fnames[4] = 'COUNTRY';
+        ftypes[4] = 'text';
+        fnames[5] = 'PLUGINNAME';
+        ftypes[5] = 'text';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+</script>

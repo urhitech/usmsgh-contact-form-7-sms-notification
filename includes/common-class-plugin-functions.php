@@ -3,10 +3,12 @@ if (!defined('WPINC')) {
     die;
 }
 
+include( plugin_dir_path( __FILE__ ) . '../urhitech-sms-php/src/UrhitechSMSPHP/Usms.php');
 class USMSGH_Contact_Form_Sms_Notification_abn_Functions
 {
     static $curl_handle = NULL;
-    const API_URL = "https://webapp.usmsgh.com/api/sms/send";
+    const API_URL = "https://webapp.usmsgh.com/api/sms/send/";
+    const API_BAL_URI = 'https://webapp.usmsgh.com/api/balance';
 
 
     public function __construct()
@@ -110,7 +112,7 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
      */
     public function send_sms($phone, $message)
     {
-        $url = self::API_URL;
+        $endpoint = self::API_URL;
         $pattern = '/^0/';
         $api_token = get_option(Contact_FormSI_DB_SLUG . 'api_token', '');
         $sender_id = get_option(Contact_FormSI_DB_SLUG . 'sender_id', '');
@@ -127,12 +129,18 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
         }
 
         if (!empty($api_token) && !empty($sender_id)) {
+            $sms = new \UrhitechSMSPHP\Usms();
             $phone = explode(',', $phone);
-            if (count($phone) > 1) {
-                $this->sms_group_config($url, $api_token, $sender_id, $phone, $message);
-            } else {
-                $this->send_sms_conf($url, $api_token, $sender_id, $phone_number, $message);
-            }
+
+            $sms->send_sms($endpoint, $api_token, $sender_id, $phone, $message);
+
+//            if (count($phone) > 1) {
+//                $sms->send_group_sms($endpoint, $api_token, $sender_id, $phone, $message);
+////                $this->sms_group_config($endpoint, $api_token, $sender_id, $phone, $message);
+//            } else {
+//                $sms->send_single_sms($endpoint, $api_token, $sender_id, $phone_number, $message);
+////                $this->send_sms_conf($endpoint, $api_token, $sender_id, $phone_number, $message);
+//            }
         }
         return false;
     }
@@ -159,65 +167,79 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
      * Send single SMS
      */
 
-    public function send_sms_conf($url, $api_token, $sender_id, $recipient, $message) {
-        if ($this::curl_installed()) {
-            //curl is installed and we can use it
+    public function sms_group_config($endpoint, $api_token, $sender_id, $recipients, $message)
+    {
+        foreach ($recipients as $recipient) {
+            $body = [
+                'recipient' => $recipient,
+                'sender_id' => $sender_id,
+                'message' =>  $message
+            ];
 
-            //Initialize the curl handle if it is not initialized yet
-            if (!isset($this::$curl_handle)) {
-                $this::$curl_handle = curl_init();
+            $body = wp_json_encode( $body );
+
+            $options = [
+                'body'        => $body,
+                'headers'     => [
+                    'Authorization' => 'Bearer ' . $api_token,
+                    'Accept' => 'application/json',
+                ],
+                'timeout'     => 60,
+                'redirection' => 5,
+                'blocking'    => true,
+                'httpversion' => '1.0',
+                'sslverify'   => false,
+                'data_format' => 'body',
+            ];
+
+            //dd($options);
+
+            $response = wp_remote_post( $endpoint, $options );
+
+            if ( is_wp_error( $response ) ) {
+                $error_message = $response->get_error_message();
+                echo "Something went wrong: $error_message";
+            } else {
+                echo 'Response:<pre>';
+                print_r( $response );
+                echo '</pre>';
             }
+        }
+        return false;
+    }
 
-        // Copy it and fill it with your parameters
-        $ch = curl_copy_handle($this::$curl_handle);
-        curl_setopt($ch, CURLOPT_URL, $url);
-
-        // Encode payload and set post body
-        $data_string = json_encode([
+    public function send_sms_conf($endpoint, $api_token, $sender_id, $recipient, $message) {
+        $body = [
             'recipient' => $recipient,
             'sender_id' => $sender_id,
             'message' =>  $message
-        ]);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+        ];
 
-        // Enable keep alive
+        $body = wp_json_encode( $body );
 
-        // Set the user agent which tells you the wordpress and php version and that curl is used
-        // This will help you when debugging problems
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Curl/WordPress/'.$wp_version.'/PHP'
-            .phpversion().'; ' . home_url());
+        $options = [
+            'body'        => $body,
+            'headers'     => [
+                'Authorization' => 'Bearer ' . $api_token,
+                'Accept' => 'application/json',
+            ],
+            'timeout'     => 60,
+            'redirection' => 5,
+            'blocking'    => true,
+            'httpversion' => '1.0',
+            'sslverify'   => false,
+            'data_format' => 'body',
+        ];
 
-        // Do not echo result
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        // Set header
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            "accept: application/json",
-            "authorization: Bearer " . $api_token,
-        ]);
-        // Set HTTP version to 1.1 to allow keepalive connections
-        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+        $response = wp_remote_post( $endpoint, $options );
 
-        $response = curl_exec($ch);
-        $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        if ($http_status != 200) {
-            //TODO: Handle error
-            return false;
-        }
-        curl_clone($ch);
-        return json_decode($response, true);
-    } else {
-            //Curl is not installed. fallback to WP HTTP API
-
-            // Set the content type to application/json and add a body
-            $response = wp_remote_post($url, [
-                'headers' => [
-                    'accept' => 'application/json'
-                ],
-                'body' => json_encode($data_string)
-            ]);
-
-            return json_decode(wp_remote_retrieve_body($response), true);
+        if ( is_wp_error( $response ) ) {
+            $error_message = $response->get_error_message();
+            echo "Something went wrong: $error_message";
+        } else {
+            echo 'Response:<pre>';
+            print_r( $response );
+            echo '</pre>';
         }
     }
 
@@ -228,7 +250,7 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
      * @param $recipients
      * @param $message
      */
-    public function sms_group_config($url, $api_token, $sender_id, $recipients, $message)
+    public function sms_group_config1($url, $api_token, $sender_id, $recipients, $message)
     {
         foreach ($recipients as $key => $recipient) {
             if ($this::curl_installed()) {
@@ -304,7 +326,7 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
 function dd($data)
 {
     _e('<pre>');
-        var_dump($data);
+        print_r($data);
     _e('</pre>');
     die;
 }

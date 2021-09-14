@@ -12,7 +12,7 @@
 						<label for="wpcf7-sms-recipient"><?php _e("To:",Contact_FormSI_TXT); ?></label>
 					</th>
 					<td>
-						<input type="text" id="wpcf7-sms-recipient" name="wpcf7si-settings[phone]" class="wide" size="70" value="<?php echo $data['phone']; ?>">
+						<input type="text" id="wpcf7-sms-recipient" name="wpcf7si-settings[phone]" class="wide" size="70" value="<?php _e($data['phone']); ?>">
 						<br/> <?php _e("<small>Enter Numbers By <code>,</code> for multiple</small>",Contact_FormSI_TXT); ?>
 					</td>
 				</tr>
@@ -22,7 +22,7 @@
 						<label for="wpcf7-mail-body"><?php _e("Message body:",Contact_FormSI_TXT); ?></label>
 					</th>
 					<td>
-<textarea id="wpcf7-mail-body" name="wpcf7si-settings[message]" cols="100" rows="6" class="large-text code"><?php echo $data['message']; ?></textarea>
+<textarea id="wpcf7-mail-body" name="wpcf7si-settings[message]" cols="100" rows="6" class="large-text code"><?php _e($data['message']) ; ?></textarea>
 					</td>
 				</tr>
 			</tbody>

@@ -34,14 +34,14 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Plugin_Integration extends USMSGH
 	{
 		$array = get_option('wpcf7is_history');
 		if (empty($array)) {
-			echo '1';
+			_e('1');
 			exit;
 		}
-		$deleteID = $_REQUEST['deleteID'];
+		$deleteID = sanitize_text_field($_REQUEST['deleteID']);
 		if (isset($array[$deleteID])) {
 			unset($array[$deleteID]);
 			update_option('wpcf7is_history', $array);
-			echo '1';
+            _e('1');
 			exit;
 		}
 	}
@@ -68,7 +68,6 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Plugin_Integration extends USMSGH
 		}
 	}
 
-
 	/**
 	 * Save SMS options when contact form is saved
 	 *
@@ -78,6 +77,12 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Plugin_Integration extends USMSGH
 	 */
 	public function save_form($form)
 	{
-		update_option('wpcf7_international_sms_' . (method_exists($form, 'id') ? $form->id() : $form->id), $_POST['wpcf7si-settings']);
+        $settings = wp_unslash($_POST['wpcf7si-settings']); // This an array and if wp_unslash method isn't enough please suggest appropriate method.
+		update_option('wpcf7_international_sms_' . (method_exists($form, 'id') ? $form->id() : $form->id), $settings);
 	}
+}
+
+function sanitize($dirty)
+{
+    return htmlentities($dirty, 'ENT_QUOTES', 'UTF-8');
 }

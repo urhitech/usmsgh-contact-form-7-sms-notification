@@ -16,7 +16,7 @@ Works with the Contact Form 7 plugin to send SMS notifications when somebody sub
 Works with the Contact Form 7 plugin to send SMS notifications when somebody submits your contact form, using the API Configured By Site Admin
 
 * Support SMS gateways:
- * [USMS-GH](https://www.usmsgh.com/)
+ * [USMS-GH](https://www.usmsgh.com)
  
 = Our Services =
  * [Bulk SMS Service Provider in Ghana](https://www.usmsgh.com)

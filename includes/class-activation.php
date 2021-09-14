@@ -21,7 +21,7 @@ class cf7isi_activation_welcome_page{
 			'tweet_text' => 'What A Stunned Plugin',
 			'twitter_user' => 'urhitech',
 			'twitter_hash' => 'WCRBP',
-			'gitub_user' => 'urhitech',
+			'github_user' => 'urhitech',
 			'github_repo' => 'woocommerce-quick-donation',
 			
 			'show_change_log' => true,

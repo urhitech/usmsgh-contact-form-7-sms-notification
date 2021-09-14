@@ -131,9 +131,8 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Admin extends USMSGH_Contact_Form
 		if (Contact_FormSI()->get_vars('FILE') == $plugin_file) {
 			$plugin_meta[] = sprintf('<a href="%s">%s</a>', '#', __('Settings', Contact_FormSI_TXT));
 			$plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://usmsgh.com/faqs/', __('F.A.Q', Contact_FormSI_TXT));
-			$plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/urhitech/usmsgh-contact-form-7-sms-integration', __('View On Github', Contact_FormSI_TXT));
-			$plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/urhitech/usmsgh-contact-form-7-sms-integration/issues', __('Report Issue', Contact_FormSI_TXT));
-			//            $plugin_meta[] = sprintf('&hearts; <a href="%s">%s</a>', 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KX225JU6JH8E2', __('Donate', Contact_FormSI_TXT) );
+			$plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/urhitech/usmsgh-contact-form-7-sms-notification', __('View On Github', Contact_FormSI_TXT));
+			$plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://github.com/urhitech/usmsgh-contact-form-7-sms-notification/issues', __('Report Issue', Contact_FormSI_TXT));
 			$plugin_meta[] = sprintf('<a href="%s">%s</a>', 'https://usmsgh.com/contact-support/', __('Contact Author', Contact_FormSI_TXT));
 		}
 		return $plugin_meta;

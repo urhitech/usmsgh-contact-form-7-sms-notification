@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Works with the Contact Form 7 plugin to send SMS notifications when somebody submits your contact form, using the API Configured By Site Admin
 
 == Description ==
-**[USMS-GH Contact Form 7 Sms Integration Guide](https://www.usmsgh.com/contact-form-7-sms-integration.html)**
+**[USMS-GH Contact Form 7 Sms Integration Guide](https://www.usmsgh.com/contact-form-7-sms-notification)**
 **[USMS-GH Contact Form 7 Sms Integration](https://www.usmsgh.com/)**
 
 Works with the Contact Form 7 plugin to send SMS notifications when somebody submits your contact form, using the API Configured By Site Admin

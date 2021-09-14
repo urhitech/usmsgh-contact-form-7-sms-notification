@@ -1,6 +1,6 @@
 === USMS-GH Contact Form 7 SMS Notification ===
 Contributors: urhitech
-Tags: Contact form 7 To SMS, Free SMS USMS-GH Account, Sms Form, contact form, Contact Form 7, Contact Form 7 To Mobile SMS, SMS API, FORM SMS API, Ghana BULK SMS API, SMS gateway, USMS-GH, USMS-GH GHANA
+Tags: Contact form 7 SMS Notification, Free SMS USMS-GH Account, SMS Notification, Sms Form, contact form, Contact Form 7, Contact Form 7 To Mobile SMS, SMS API, FORM SMS API, Ghana BULK SMS API, SMS gateway, USMS-GH, USMS-GH GHANA
 Requires at least: 3.4
 Tested up to: 5.8
 License: GPLv3

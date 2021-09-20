@@ -165,6 +165,8 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
      * @return mixed
      *
      * Send single SMS
+     *
+     * Error [body] => {"status":"error","message":"CSRF token mismatch."}
      */
 
     public function sms_group_config($endpoint, $api_token, $sender_id, $recipients, $message)

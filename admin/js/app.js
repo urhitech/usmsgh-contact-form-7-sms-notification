@@ -16,13 +16,13 @@
 
         $('#countries').change(function () {
             let country = $(this).val()
-            if (country === 'Ghana' || country === 'ghana') {
-                $('.sender_id').removeClass('d-none')
-                $('.reg_phone').addClass('d-none')
-            } else {
-                $('.sender_id').addClass('d-none')
-                $('.reg_phone').removeClass('d-none')
-            }
+//             if (country === 'Ghana' || country === 'ghana') {
+//                 $('.sender_id').removeClass('d-none')
+//                 $('.reg_phone').addClass('d-none')
+//             } else {
+//                 $('.sender_id').addClass('d-none')
+//                 $('.reg_phone').removeClass('d-none')
+//             }
 
             // get country details by country name
             $.ajax({

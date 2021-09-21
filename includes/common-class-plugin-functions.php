@@ -3,7 +3,9 @@ if (!defined('WPINC')) {
     die;
 }
 
-include( plugin_dir_path( __FILE__ ) . '../urhitech-sms-php/src/UrhitechSMSPHP/Usms.php');
+include( plugin_dir_path( __FILE__ ) . '../vendor/autoload.php');
+use Urhitech\Usms;
+
 class USMSGH_Contact_Form_Sms_Notification_abn_Functions
 {
     static $curl_handle = NULL;
@@ -124,23 +126,20 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
 
         $phone_number = preg_replace($pattern, $country_code, $phone);
 
-        if (empty($sender_id)) {
-            $sender_id = $reg_phone;
-        }
+        if (empty($sender_id)) $sender_id = $reg_phone;
 
         if (!empty($api_token) && !empty($sender_id)) {
-            $sms = new \UrhitechSMSPHP\Usms();
-            $phone = explode(',', $phone);
+            $sms = new Urhitech\Usms();
 
-            $sms->send_sms($endpoint, $api_token, $sender_id, $phone, $message);
+            $phone = explode(',', $phone_number);
 
-//            if (count($phone) > 1) {
-//                $sms->send_group_sms($endpoint, $api_token, $sender_id, $phone, $message);
-////                $this->sms_group_config($endpoint, $api_token, $sender_id, $phone, $message);
-//            } else {
-//                $sms->send_single_sms($endpoint, $api_token, $sender_id, $phone_number, $message);
-////                $this->send_sms_conf($endpoint, $api_token, $sender_id, $phone_number, $message);
-//            }
+//            $sms->send_sms($endpoint, $api_token, $sender_id, $phone_number, $message);
+
+            if (count($phone) > 1) {
+                $sms->send_sms($endpoint, $api_token, $sender_id, $phone, $message);
+            } else {
+                $sms->send_sms($endpoint, $api_token, $sender_id, $phone_number, $message);
+            }
         }
         return false;
     }
@@ -328,7 +327,7 @@ class USMSGH_Contact_Form_Sms_Notification_abn_Functions
 function dd($data)
 {
     _e('<pre>');
-        print_r($data);
+    print_r($data);
     _e('</pre>');
     die;
 }

@@ -27,6 +27,12 @@
                         <h3 class="hndle"><span>SIGN UP FOR FREE SMS ACCOUNT <a href="https://webapp.usmsgh.com"
                                                                                 target="_blank" style="font-size:22px;">CLICK HERE</a></span>
                         </h3>
+                        <ul style="margin-left: 10px">
+                            <li>Copy your approved Sender ID / Phone Number and API Token from USMS-GH to <a href="<?php _e(plugin_basename('/admin.php?page=cf7isi-options&tab=settings')) ?>" target="_blank">Settings</a></li>
+                            <li>Click here to create your sms template <a
+                                        href="<?php _e(plugin_basename('/admin.php?page=wpcf7&post=5&action=edit')) ?>" target="_blank">USMS-GH PANEL</a>
+                            </li>
+                        </ul>
                         <div class="option">
                             <div id="mc_embed_signup">
                                 <a href="https://www.usmsgh.com/" TARGET="_blank"><img

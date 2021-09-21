@@ -29,7 +29,7 @@ Works with the Contact Form 7 plugin to send SMS notifications when somebody sub
 Works with the Contact Form 7 plugin to send SMS notifications when somebody submits your contact form, using the API Configured By Site Admin 
 
 1. You can:
- * Upload the `usmsgh-contact-form-7-sms-integration` folder to `/wp-content/plugins/` directory via FTP.
+ * Upload the `usmsgh-contact-form-7-sms-notification` folder to `/wp-content/plugins/` directory via FTP.
  * Upload the full ZIP file via *Plugins -> Add New -> Upload* on your WordPress Administration Panel.
  * Search **USMS-GH Contact Form 7 SMS Notification** in the search engine available on *Plugins -> Add New* and press *Install Now* button.
 2. Activate plugin through *Plugins* menu on WordPress Administration Panel.

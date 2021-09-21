@@ -3,7 +3,7 @@ if (!defined('WPINC')) {
     die;
 }
 
-include( plugin_dir_path( __FILE__ ) . '../vendor/autoload.php');
+include( plugin_dir_path( __FILE__ ) . '..'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php');
 use Urhitech\Usms;
 
 class USMSGH_Contact_Form_Sms_Notification_abn_Functions

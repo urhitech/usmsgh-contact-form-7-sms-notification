@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sefakor20/urhitech-sms-php.git",
-                "reference": "92b4c79c6b207dc3c07f098f66d111d33f1549ae"
+                "reference": "bed188a9d60c061bdeca48f72c9a70995f9c24d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sefakor20/urhitech-sms-php/zipball/92b4c79c6b207dc3c07f098f66d111d33f1549ae",
-                "reference": "92b4c79c6b207dc3c07f098f66d111d33f1549ae",
+                "url": "https://api.github.com/repos/sefakor20/urhitech-sms-php/zipball/bed188a9d60c061bdeca48f72c9a70995f9c24d3",
+                "reference": "bed188a9d60c061bdeca48f72c9a70995f9c24d3",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 "issues": "https://github.com/sefakor20/urhitech-sms-php/issues",
                 "source": "https://github.com/sefakor20/urhitech-sms-php/tree/main"
             },
-            "time": "2021-09-20T17:03:25+00:00"
+            "time": "2021-09-21T11:55:04+00:00"
         }
     ],
     "packages-dev": [],

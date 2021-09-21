@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" maxlength="11" name="sender_id" value="<?php if (!empty($sender_id_data)) _e($sender_id_data)?>">
             </div>
         </div>
-        <div class="col-md-4 reg_phone d-none">
+        <div class="col-md-4 reg_phone">
             <div class="form-group">
                 <label><?php _e('USMS-GH Approved Phone Number', Contact_FormSI_TXT); ?></label>
                 <input type="text" class="form-control" name="reg_phone" value="<?php if (!empty($reg_phone_data)) _e($reg_phone_data) ?>">

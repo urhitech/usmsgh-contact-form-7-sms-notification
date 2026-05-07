@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       USMS-GH Contact Form 7 SMS Notification
  * Description:       Using USMS-GH Contact Form 7 SMS Notification
- * Version:           1.1.1
+ * Version:           1.1.2
  * Author:            urhitech
  * Author URI:        https://www.usmsgh.com
  * Text Domain:       usmsgh-contact-for-7-sms-notification
@@ -21,7 +21,7 @@ if (!defined('WPINC')) {
 
 class USMSGH_Contact_Form_Sms_Notification_abn
 {
-	public $version = '1.1.1';
+	public $version = '1.1.2';
 	public $plugin_vars = array();
 	protected static $_instance = null;
 	protected static $functions = null;
